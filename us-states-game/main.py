@@ -42,10 +42,8 @@ while len(gussed_states) <= 50 :
     answer_state = screen.textinput(title=f"{len(gussed_states)}/50 states correct",prompt="what's another states name?").title()
     
     if answer_state == "Exit":
-        missing_states = []
-        for state in all_states:
-            if state not in gussed_states:
-                missing_states.append(state)
+        missing_states = [state for state in all_states if state not in gussed_states]
+        
         print(missing_states)
         break
     
